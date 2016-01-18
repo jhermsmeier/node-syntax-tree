@@ -61,8 +61,7 @@ interface Parent <: Node {
 ### Root
 
 ```idl
-interface Root <: Node {
+interface Root <: Parent {
   type: "Root";
-  children: [ Node ];
 };
 ```
