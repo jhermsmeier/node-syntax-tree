@@ -14,6 +14,39 @@ $ npm install syntax-tree
 var SyntaxTree = require( 'syntax-tree' )
 ```
 
+```js
+// Create a new tree
+var tree = new SyntaxTree()
+
+// Create a new node
+var childNode = new SyntaxTree.Node({
+  type: 'ArbitraryNode'
+})
+
+// Add nodes to the tree
+tree.root.appendChild( childNode )
+tree.root.prependChild( otherChildNode )
+
+// Replace a node
+someNode.replaceChild( oldChild, newChild )
+
+// Insertions
+someNode.insertBefore( newChild, existingChild )
+someNode.insertAfter( newChild, existingChild )
+
+// Siblings
+someNode.nextSibling.appendChild( newChild )
+someNode.previousSibling.appendChild( newChild )
+
+// Children
+someNode.firstChild // -> child|null
+someNode.lastChild // -> child|null
+
+// Relationships
+someNode.isParent // -> true|false
+someNode.isChild // -> true|false
+```
+
 ## Interface Definition
 
 ### Node
