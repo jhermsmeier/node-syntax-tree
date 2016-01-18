@@ -50,11 +50,19 @@ interface Position {
 };
 ```
 
+### Child
+
+```idl
+interface Child <: Node {
+  readonly attribute parent: Parent;
+};
+```
+
 ### Parent
 
 ```idl
 interface Parent <: Node {
-  children: [ Node ];
+  children: [ Child ];
 };
 ```
 
