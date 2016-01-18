@@ -21,7 +21,6 @@ var SyntaxTree = require( 'syntax-tree' )
 ```idl
 interface Node {
   type: String;
-  location: SourceLocation | null;
   data: Data | null;
 };
 ```
@@ -30,24 +29,6 @@ interface Node {
 
 ```idl
 interface Data {};
-```
-
-### SourceLocation
-
-```idl
-interface SourceLocation {
-  start: Position;
-  end: Position;
-};
-```
-
-### Position
-
-```idl
-interface Position {
-  line: uint32 >= 1;
-  column: uint32 >= 0;
-};
 ```
 
 ### Child
