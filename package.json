@@ -1,7 +1,8 @@
 {
   "name": "syntax-tree",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Syntax Tree",
+  "author": "Jonas Hermsmeier <jhermsmeier@gmail.com> (https://jhermsmeier.de)",
   "license": "MIT",
   "keywords": [
     "st",
@@ -10,24 +11,19 @@
     "tree"
   ],
   "main": "lib/syntax-tree",
-  "author": {
-    "name": "Jonas Hermsmeier",
-    "email": "jhermsmeier@gmail.com",
-    "url": "https://jhermsmeier.de/"
-  },
   "dependencies": {
     "bloodline": "~1.0.0"
   },
   "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "homepage": "https://github.com/jhermsmeier/node-syntax-tree",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jhermsmeier/node-syntax-tree.git"
+    "url": "git+https://github.com/jhermsmeier/node-syntax-tree.git"
   },
   "bugs": {
     "url": "https://github.com/jhermsmeier/node-syntax-tree/issues"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
