@@ -1,11 +1,11 @@
 # Syntax Tree
-[![npm](http://img.shields.io/npm/v/syntax-tree.svg?style=flat-square)](https://npmjs.com/syntax-tree)
-[![npm downloads](http://img.shields.io/npm/dm/syntax-tree.svg?style=flat-square)](https://npmjs.com/syntax-tree)
+[![npm](http://img.shields.io/npm/v/syntax-tree.svg?style=flat-square)](https://npmjs.com/package/syntax-tree)
+[![npm downloads](http://img.shields.io/npm/dm/syntax-tree.svg?style=flat-square)](https://npmjs.com/package/syntax-tree)
 
 ## Install via [npm](https://npmjs.com)
 
 ```sh
-$ npm install syntax-tree
+$ npm install --save syntax-tree
 ```
 
 ## Usage
@@ -34,6 +34,10 @@ someNode.replaceChild( oldChild, newChild )
 someNode.insertBefore( newChild, existingChild )
 someNode.insertAfter( newChild, existingChild )
 
+// Removals
+someNode.removeChild( child )
+otherNode.remove()
+
 // Siblings
 someNode.nextSibling.appendChild( newChild )
 someNode.previousSibling.appendChild( newChild )
@@ -54,7 +58,16 @@ someNode.isChild // -> true|false
 ```idl
 interface Node {
   type: String;
+  parent: Node?;
+  children: [ Child ];
   data: Data | null;
+  readonly attribute isRoot: boolean;
+  readonly attribute isParent: boolean;
+  readonly attribute isChild: boolean;
+  readonly attribute firstChild: Child | null;
+  readonly attribute lastChild: Child | null;
+  readonly attribute previousSibling: Node | null;
+  readonly attribute nextSibling: Node | null;
 };
 ```
 
