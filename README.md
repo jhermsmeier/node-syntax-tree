@@ -57,10 +57,7 @@ someNode.isChild // -> true|false
 
 ```idl
 interface Node {
-  type: String;
-  parent: Node?;
-  children: [ Child ];
-  data: Data | null;
+  
   readonly attribute isRoot: boolean;
   readonly attribute isParent: boolean;
   readonly attribute isChild: boolean;
@@ -68,6 +65,12 @@ interface Node {
   readonly attribute lastChild: Child | null;
   readonly attribute previousSibling: Node | null;
   readonly attribute nextSibling: Node | null;
+  
+  type: String;
+  parent: Node?;
+  children: [ Child ];
+  data: Data | null;
+  
 };
 ```
 
@@ -77,26 +80,11 @@ interface Node {
 interface Data {};
 ```
 
-### Child
-
-```idl
-interface Child <: Node {
-  readonly attribute parent: Parent;
-};
-```
-
-### Parent
-
-```idl
-interface Parent <: Node {
-  children: [ Child ];
-};
-```
-
 ### Root
 
 ```idl
-interface Root <: Parent {
+interface Root <: Node {
   type: "Root";
+  parent: Root;
 };
 ```
